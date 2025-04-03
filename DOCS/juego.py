@@ -1,9 +1,10 @@
-### Archivo: juego.py
-
+## Archivo: juego.py
 import random
 from utilidades import *
 
 cantidad_partidas = 3
+
+opciones = {1: "Piedra", 2: "Papel", 3: "Tijera", 4: "Lagarto", 5: "Spock"}
 
 def jugar_maquina():
     puntuacion1 = 0
@@ -14,9 +15,9 @@ def jugar_maquina():
         usuario = int(input("Introduce una opción: "))
         maquina = random.choice([1, 2, 3, 4, 5])
 
-        print(f"\nTu elección:")
+        print(f"\nTu elección: {opciones[usuario]}")
         mostrar_dibujo(usuario)
-        print("Elección de la máquina:")
+        print(f"Elección de la máquina: {opciones[maquina]}")
         mostrar_dibujo(maquina)
 
         resultado = determinar_ganador(usuario, maquina)
@@ -46,9 +47,9 @@ def jugar_usuario():
         usuario1 = int(input("Usuario 1, elige: "))
         usuario2 = int(input("Usuario 2, elige: "))
 
-        print("\nUsuario 1 eligió:")
+        print(f"\nUsuario 1 eligió: {opciones[usuario1]}")
         mostrar_dibujo(usuario1)
-        print("Usuario 2 eligió:")
+        print(f"Usuario 2 eligió: {opciones[usuario2]}")
         mostrar_dibujo(usuario2)
 
         resultado = determinar_ganador(usuario1, usuario2)
